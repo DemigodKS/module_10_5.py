@@ -17,7 +17,6 @@ def read_info(*name):
     #print(all_data)
 
 
-
 if __name__ == '__main__':
     start_time = datetime.now()
     name = ['file 1.txt', 'file 2.txt', 'file 3.txt', 'file 4.txt']
@@ -25,15 +24,16 @@ if __name__ == '__main__':
     end_time = datetime.now()
     all_time = end_time - start_time
     print(all_time)
-    
+
 if __name__ == '__main__':
     name = ['file 1.txt', 'file 2.txt', 'file 3.txt', 'file 4.txt']
-    with Pool(cpu_count()) as pool:
+    with Pool(4) as pool:
         start_time1 = datetime.now()
         pool.map(read_info, [var for var in name])
         end_time1 = datetime.now()
         all_time1 = end_time1 - start_time1
     print(all_time1)
+
 
 
 
